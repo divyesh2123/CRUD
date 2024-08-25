@@ -1,7 +1,24 @@
+using ADONETIDWED;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(y=>
+{
+    y.Password.RequiredUniqueChars = 23;
+    y.Password.RequireUppercase = false;
+})
+                    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+var connectionString = builder.Configuration.GetConnectionString("SQLServerIdentityConnection") ?? throw new InvalidOperationException("Connection string 'SQLServerIdentityConnection' not found.");
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+
 
 var app = builder.Build();
 
