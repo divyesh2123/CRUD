@@ -5,13 +5,19 @@
 
 using SwapNumbers;
 
-Employee employee = new ();
-Employee employee1 = new();
+SalaryCalculator salaryCalculator = new SalaryCalculator();
 
-employee.employeeId = "12";
-employee1.employeeId = "13";
+salaryCalculator.input();
+salaryCalculator.output();
+//using SwapNumbers;
 
-Console.WriteLine (employee.employeeId);
+//Employee employee = new ();
+//Employee employee1 = new();
+
+//employee.employeeId = "12";
+//employee1.employeeId = "13";
+
+//Console.WriteLine (employee.employeeId);
 
 //employee.Input();
 //employee.Display();
