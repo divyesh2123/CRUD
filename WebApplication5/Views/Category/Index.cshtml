@@ -1,0 +1,14 @@
+﻿@model Category
+
+<form asp-action="Index"  asp-controller="Category"
+method="post">
+    
+<input type="hidden" asp-for="CategoryId"/>
+    <input type="text" asp-for="CategoryName" />
+
+    <textarea asp-for="Description">
+
+    </textarea>
+
+    <input type="submit" value="Save"/>
+</form>

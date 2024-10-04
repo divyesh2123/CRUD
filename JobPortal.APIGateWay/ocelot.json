@@ -1,0 +1,33 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7137"
+
+  },
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/gateway/users",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/user",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7086
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/jobs",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/jobs",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7283
+        }
+      ]
+    }
+   
+  ]
+}

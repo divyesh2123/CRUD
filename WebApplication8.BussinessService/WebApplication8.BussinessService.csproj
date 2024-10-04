@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebApplication8.BussinessEntity\WebApplication8.BussinessEntity.csproj" />
+    <ProjectReference Include="..\WebApplication8.Common\WebApplication8.Common.csproj" />
+    <ProjectReference Include="..\WebApplication8.Repositroy\WebApplication8.Repositroy.csproj" />
+  </ItemGroup>
+
+</Project>

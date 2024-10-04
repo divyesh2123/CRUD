@@ -1,0 +1,13 @@
+﻿@model Employee
+
+
+@using(Html.BeginForm("EmployeeInfo","Home",FormMethod.Post))
+{
+
+@Html.TextBoxFor(y=>y.FirstName)
+
+@Html.TextBoxFor(y=>y.LastName)
+
+<input type="submit" value="save" />
+
+}

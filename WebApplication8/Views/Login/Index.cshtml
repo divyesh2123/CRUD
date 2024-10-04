@@ -1,0 +1,14 @@
+﻿@model WebApplication8.BussinessEntity.LoginViewModel
+@{
+    Layout = null;
+}
+@ViewBag.Message
+<form asp-action="Index" asp-controller="Login" method="post">
+
+    <input type="text" asp-for="Name"/>
+
+    <input type="text" asp-for="Password"/>
+
+    <input type="submit" value="save"/>
+
+</form>

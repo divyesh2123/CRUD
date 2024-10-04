@@ -1,0 +1,14 @@
+﻿@model List<Product>
+
+<table>
+
+    @foreach(var t in Model)
+    {
+        <tr>
+            <td>@t.ProductId</td>
+             <td>@t.ProductName</td>
+        </tr>
+    }
+
+
+</table>
