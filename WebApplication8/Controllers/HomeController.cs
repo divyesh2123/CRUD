@@ -15,6 +15,7 @@ namespace WebApplication8.Controllers
 
         public IActionResult Index()
         {
+            TempData["a"] = "this is from a";
             return View();
         }
 

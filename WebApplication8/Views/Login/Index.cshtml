@@ -2,7 +2,7 @@
 @{
     Layout = null;
 }
-@ViewBag.Message
+@ViewData["Message"]
 <form asp-action="Index" asp-controller="Login" method="post">
 
     <input type="text" asp-for="Name"/>

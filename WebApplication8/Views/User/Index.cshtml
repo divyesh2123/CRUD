@@ -4,6 +4,8 @@
 {
 @TempData["Message"]
 }
+
+<div asp-validation-summary="All"></div>
 	<!-- Default Basic Forms Start -->
 					<div class="pd-20 card-box mb-30">
 						<div class="clearfix">
@@ -23,6 +25,22 @@
 										placeholder="first Name"
 										asp-for="Name"
 									/>
+
+									<span asp-validation-for="Name"></span>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">Name</label>
+								<div class="col-sm-12 col-md-10">
+									<input
+										class="form-control"
+										type="text"
+										placeholder="email"
+										asp-for="Email"
+									/>
+
+									<span asp-validation-for="Email"></span>
 								</div>
 							</div>
 
@@ -36,7 +54,24 @@
 										asp-for="Password"
 									/>
 								</div>
+
+								<span asp-validation-for="Password"></span>
 							</div>
+
+							<div class="form-group row">
+								<label class="col-sm-12 col-md-2 col-form-label">Password</label>
+								<div class="col-sm-12 col-md-10">
+									<input
+										class="form-control"
+										type="password"
+										placeholder="Password"
+										asp-for="ConfirmPassword"
+									/>
+								</div>
+
+								<span asp-validation-for="ConfirmPassword"></span>
+							</div>
+
 
 							<div class="form-group row">
 								<label class="col-sm-12 col-md-2 col-form-label">Address1</label>

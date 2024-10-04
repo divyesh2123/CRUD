@@ -26,7 +26,7 @@ namespace WebApplication8.Controllers
             
             if (d == false)
             {
-                ViewBag.Message = message;  
+                ViewBag.Message = message;
                 return View(loginViewModel);
 
             }

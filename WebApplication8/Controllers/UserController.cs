@@ -26,6 +26,11 @@ namespace WebApplication8.Controllers
         [HttpPost]
         public IActionResult Index(UserViewModel user)
         {
+            if(!ModelState.IsValid)
+            {
+                return View(user);
+            }
+
             var d= _userService.AddUserInfo(user);
             TempData["message"] = "Data added...";
             return RedirectToAction("List");   
