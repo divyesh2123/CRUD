@@ -44,5 +44,10 @@ namespace WebApplication8.BussinessService.Concreate
             var users = userRepositroy.GetUsers();
             return users.ToViewModel();
         }
+
+        public bool IsEmailAlreadyInUse(string emailId)
+        {
+            return userRepositroy.IsEmailAlreadyInUse(emailId);
+        }
     }
 }

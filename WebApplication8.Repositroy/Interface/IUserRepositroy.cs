@@ -18,5 +18,8 @@ namespace WebApplication8.Repositroy.Interface
         User GetUser(int userId);
 
         bool CheckLogin(string username, string password, out string message);
+
+
+        bool IsEmailAlreadyInUse(string emailId);
     }
 }

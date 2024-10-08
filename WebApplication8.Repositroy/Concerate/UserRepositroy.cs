@@ -64,5 +64,10 @@ namespace WebApplication8.Repositroy.Concerate
         {
             return nTireCrudContext.Users.ToList();
         }
+
+        public bool IsEmailAlreadyInUse(string emailId)
+        {
+            return nTireCrudContext.Users.Any(y => y.Name == emailId);
+        }
     }
 }

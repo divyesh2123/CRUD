@@ -22,11 +22,18 @@ namespace WebApplication8.Controllers
         [HttpPost]
         public IActionResult Index(LoginViewModel loginViewModel)
         {
+
+            if(!ModelState.IsValid)
+            {
+                return View(loginViewModel);
+            }
+
             var d = userService.CheckLogin(loginViewModel.Name, loginViewModel.Password, out string message);
             
             if (d == false)
             {
-                ViewBag.Message = message;
+
+                ModelState.AddModelError("Message", "Invalid username and password");
                 return View(loginViewModel);
 
             }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using WebApplication8.BussinessEntity;
 using WebApplication8.BussinessService;
 using WebApplication8.BussinessService.Concreate;
@@ -23,7 +24,35 @@ namespace WebApplication8.Controllers
             return View("Index",p);
         }
 
-        [HttpPost]
+
+        [AcceptVerbs("GET", "POST")]
+        public async Task<IActionResult> IsEmailAvailable(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                return Json("Please enter a valid email address.");
+            }
+
+            var emailAttribute = new EmailAddressAttribute();
+            if (!emailAttribute.IsValid(email))
+            {
+                return Json("Please enter a valid email address.");
+            }
+            // Check if the email is already in use (case-insensitive)
+            
+            
+            if (_userService.IsEmailAlreadyInUse(email))
+            {
+               
+                return Json($"Email is already in use.");
+            }
+            // If the email is available
+            return Json(true);
+
+        }
+
+
+            [HttpPost]
         public IActionResult Index(UserViewModel user)
         {
             if(!ModelState.IsValid)

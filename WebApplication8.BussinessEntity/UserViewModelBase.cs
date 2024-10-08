@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
+using WebApplication8.Common;
 
 namespace WebApplication8.BussinessEntity
 {
@@ -15,7 +17,9 @@ namespace WebApplication8.BussinessEntity
         [Required(ErrorMessage = "Please Enter Address2")]
         public string Address2 { get; set; }
 
+       
         [EmailAddress(ErrorMessage ="Please Enter Valid Email")]
+        [Remote(action: "IsEmailAvailable", controller: "User", ErrorMessage = "Email is already in use. Please use a different email address.")]
         public string Email { get; set; }   
 
         public int Id { get; set; } 

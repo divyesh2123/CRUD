@@ -3,11 +3,18 @@
     Layout = null;
 }
 @ViewData["Message"]
+
+
+    
 <form asp-action="Index" asp-controller="Login" method="post">
 
+    <div asp-validation-summary="All"></div>  
     <input type="text" asp-for="Name"/>
+    <span asp-validation-for="Name"></span>
 
     <input type="text" asp-for="Password"/>
+     <span asp-validation-for="Password"></span>
+
 
     <input type="submit" value="save"/>
 

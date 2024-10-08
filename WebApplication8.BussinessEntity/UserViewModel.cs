@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebApplication8.Common;
 
 namespace WebApplication8.BussinessEntity
 {
@@ -11,12 +12,10 @@ namespace WebApplication8.BussinessEntity
     {
 
 
-        [Range(1,20000, ErrorMessage ="pleae enter valida saalry")]
-        public int Salary { get; set; }
-        [Required(ErrorMessage ="Please enter password")]
-
+      
+      
         [Phone(ErrorMessage ="please ")]
-        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*\d)[A-Za-z\d!@#$%^&*]{8}$", ErrorMessage ="Please enter valida password")]
+        
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Please enter ConfirmPassword")]
