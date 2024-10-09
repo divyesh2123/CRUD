@@ -81,5 +81,19 @@ namespace WebApplication8.Controllers
             return RedirectToAction("List");
         }
 
+
+        [HttpGet]
+        public IActionResult ListJson()
+        {
+            var data = _userService.GetUsers();
+            return Json(new {data = data });
+        }
+
+        [HttpGet]
+        public IActionResult DisplayJqueryPage()
+        {
+            return View();
+        }
+
     }
 }

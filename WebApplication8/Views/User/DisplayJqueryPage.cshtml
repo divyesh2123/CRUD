@@ -1,0 +1,36 @@
+﻿
+ <table id="user" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                   
+
+                                </tr>
+                            </thead>
+
+ </table>
+ @section Scripts {
+ <script>
+ 
+    $(document).ready(function(){
+
+         $("#user").DataTable({
+
+             "ajax": {
+                    "url": "/User/ListJson",
+                    "type": "GET",
+                    "datatype": "json"
+                },
+
+                 "columns": [
+                    { "data": "id" },
+                    { "data": "name" },
+                    
+
+                ]
+
+         });
+    });
+ </script>
+ }
